@@ -35,6 +35,7 @@
               <th>
                 Users
               </th>
+              <th>Artikel</th>
               <th>
                 Einstellungen
               </th>
@@ -46,6 +47,13 @@
                   <td>{{$row->name}}</td>
                   <td><br>
                     @foreach ($row->user as $item)
+                    - {{ $item->name }}<br>
+                    @endforeach
+                    
+                  </td>
+
+                  <td><br>
+                    @foreach ($row->artikel as $item)
                     - {{ $item->name }}<br>
                     @endforeach
                     
