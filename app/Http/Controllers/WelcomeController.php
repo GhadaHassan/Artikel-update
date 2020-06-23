@@ -46,7 +46,7 @@ class WelcomeController extends Controller
                         
             })
             ->orWhere('name', 'LIKE', "%".request()->get('search')."%")
-            ->whereIn('modul_id', $moduls)
+            // ->whereIn('modul_id', $moduls)
             ->where('name','LIKE', "%".request()->get('search')."%")
             ->get();
 

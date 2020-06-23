@@ -57,7 +57,7 @@
               @foreach ($rows as $row)
               <tr>
                   <td>{{$row->id}}</td>
-                  <td class="text-primary"><br>
+                  <td style="font-size: 15px"><br>
                     @foreach ($row->modul as $item)
                     - {{ $item->name }}<br>
                     @endforeach

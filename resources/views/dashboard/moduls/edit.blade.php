@@ -22,6 +22,10 @@
             <button type="submit" class="btn btn-primary pull-right">Modul bearbeiten</button>
             <div class="clearfix"></div>
           </form>
+
+          <div class="row">
+            <h1>asd</h1>
+          </div>
         </div>
           
       @endslot

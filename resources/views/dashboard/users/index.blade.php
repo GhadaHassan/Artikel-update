@@ -34,17 +34,19 @@
                 Nutzer
               </th>
               <th>
-                E-mail
+                Gruppe
               </th>
               <th>
-                Module
+                Modul
               </th>
+              <th>
+                E-Mail
+              </th>
+              
               <th>
                 Artikel
               </th>
-              <th>
-                Gruppe
-              </th>
+              
               <th>
                 Einstellungen
               </th>
@@ -54,23 +56,22 @@
               <tr>
                   <td>{{$row->id}}</td>
                   <td>{{$row->name}}</td>
-                  <td>{{$row->email}}</td>
-                
-                  <td><br>
+                  <td class="text-primary">{{strtoUpper($row->group)}}</td>
+
+                  <td>
                     @foreach ($row->modul as $item)
                     - {{ $item->name }}<br>
                     @endforeach
                     
                   </td>
-
-                  <td><br>
+                  <td>{{$row->email}}</td>
+                  <td>
                     @foreach ($row->artikel as $item)
                     - {{ $item->name }}<br>
                     @endforeach
                     
-                  </td>
+                  </td>                        
                  
-                  <td class="text-primary">{{strtoUpper($row->group)}}</td>
                   <td class="text-primary" class="td-actions">
 
                     <!-- To make edit and delete buttoms is shared-->

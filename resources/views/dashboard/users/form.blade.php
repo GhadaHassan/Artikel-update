@@ -19,7 +19,7 @@
     @php $input = 'email'; @endphp
     <div class="col-md-6">
     <div class="form-group bmd-form-group">
-        <label class="bmd-label-floating">E-Mail Address</label>
+        <label class="bmd-label-floating">E-Mail Adresse</label>
         <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ isset($row) ? $row->{$input} : '' }}" name="{{$input}}" required>
         @if ($errors->has($input))
             <span class="invalid-feedback" role="alert">

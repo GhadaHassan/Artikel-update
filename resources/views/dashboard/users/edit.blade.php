@@ -1,7 +1,7 @@
 @extends('dashboard.layout.app')
 
 @section('title')
-  {{$pageTitle}}
+  {{$pageTitle = 'NUTZER BEARBEITEN'}}
 @endsection
 @section('content')
 

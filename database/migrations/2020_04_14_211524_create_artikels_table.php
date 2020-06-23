@@ -21,7 +21,7 @@ class CreateArtikelsTable extends Migration
             $table->string('old_password');
             $table->string('link');
             $table->text('note');
-            $table->integer('modul_id');
+            // $table->integer('modul_id');
             $table->timestamps();
         });
     }

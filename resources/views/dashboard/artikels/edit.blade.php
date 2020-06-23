@@ -22,10 +22,14 @@
             <button type="submit" class="btn btn-primary pull-right">{{$pageTitle}}</button>
             <div class="clearfix"></div>
           </form>
+
+          
         </div>
           
       @endslot
       @endcomponent
+
+      
     </div>
 </div>
 @endsection
