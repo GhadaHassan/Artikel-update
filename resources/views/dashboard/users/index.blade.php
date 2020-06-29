@@ -37,16 +37,15 @@
                 Gruppe
               </th>
               <th>
-                Modul
+                Module
+              </th>
+			   <th>
+                Artikel
               </th>
               <th>
                 E-Mail
               </th>
-              
-              <th>
-                Artikel
-              </th>
-              
+                       
               <th>
                 Einstellungen
               </th>
@@ -64,13 +63,14 @@
                     @endforeach
                     
                   </td>
-                  <td>{{$row->email}}</td>
-                  <td>
+				  <td>
                     @foreach ($row->artikel as $item)
                     - {{ $item->name }}<br>
                     @endforeach
                     
-                  </td>                        
+                  </td>
+                  <td>{{$row->email}}</td>
+                                          
                  
                   <td class="text-primary" class="td-actions">
 

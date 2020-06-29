@@ -52,6 +52,37 @@ class UsersController extends BackEndController
         return $array;
     }
     
+    public function edit($id){
+        $row =  $this->model->findOrFail($id);
+        // dd($row->modul);
+        $rows_modul = $row->modul;
+        $rows_artikel = $row->artikel;
+        $with = $this->with();
+        if(!empty($with)){
+            $rows = $rows_modul->with($with);
+        }
+        if(!empty($with)){
+            $rows = $rows_artikel->with($with);
+        }
+        // $rows = $rows->orderBy('id','desc')->paginate(5);
+
+        // dd($rows);
+
+
+        $pageTitle = 'EDITE '.strtoupper($this->plureModelName());   
+        $pageDes = "Here you can edit ".$this->plureModelName(); 
+        $routename = $this->plureModelName();
+        $append = $this->append();
+
+        return view('dashboard.'.$routename.'.edit', compact(
+            'row',
+            'rows_modul',
+            'rows_artikel',
+            'pageTitle',
+            'pageDes',
+            'routename'))->with($append);
+    }
+
     public function store(Store $request){
 
         $requestArray = $request->all();

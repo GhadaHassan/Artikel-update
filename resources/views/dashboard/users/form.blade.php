@@ -1,4 +1,4 @@
-@csrf
+{{-- @csrf
 
 <div class="row">
     @php $input = 'name'; @endphp
@@ -81,7 +81,7 @@
             @endif
         </div>
     </div> 
-      
+    
      
 </div>
 <hr>
@@ -107,4 +107,4 @@
       
      
 </div>
-<hr>
+<hr> --}}
