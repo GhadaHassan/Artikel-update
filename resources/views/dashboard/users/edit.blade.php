@@ -10,7 +10,7 @@
 
 <div class="content">
     <div class="container-fluid">
-      
+
       @component('dashboard.shared.edit',['pageTitle' => $pageTitle, 'pageDes' => $pageDes])
 
       @slot('slot')
@@ -18,12 +18,12 @@
         <form action="{{route('users.update',$row->id)}}" method="POST">
             {{ method_field('put')}}
             @include('dashboard.'.$routename.'.form')
-            
+
             <button type="submit" class="btn btn-primary pull-right">Nutzer bearbeiten</button>
             <div class="clearfix"></div>
           </form>
         </div>
-          
+
       @endslot
       @endcomponent
     </div>
