@@ -25,38 +25,37 @@ class WelcomeController extends Controller
 
         $moduls = auth()->user()->modul()->pluck('moduls.id')->toArray();  // take all moduls for user
         $artikel = auth()->user()->artikel()->pluck('artikels.id')->toArray();  // take all arti. for user
-
-    //  dd($moduls);
-    // dd($artikel);
-
-        $artikels = Artikel::orderBy('id','DESC');       
-
+        //  dd($moduls);
+        // dd($artikel);
         if(request()->has('search') && request()->get('search') != ''){
 
             $artikels = Artikel::whereHas('user', function ($query) use ($artikel){
-                $query->whereIn('artikel_id', $artikel)
-                       ->where('name','LIKE', "%".request()->get('search')."%"); 
+                $query->whereIn('artikel_id', $artikel);
+                        // ->where('name', 'LIKE', "%".request()->get('search')."%");
             })
-            ->orWhere('name', 'LIKE', "%".request()->get('search')."%")->get();
-            
+            // ->orWhere('name', 'LIKE', "%".request()->get('search')."%")
+            ->where('name','LIKE', "%".request()->get('search')."%")
+            ->get();
+            // dd($artikels);
+
             $artikels_modul = Artikel::whereHas('modul', function ($query) use ($moduls){
 
                 $query->whereIn('modul_id' ,$moduls )
                         ->where('name', 'LIKE', "%".request()->get('search')."%");
-                        
             })
             ->orWhere('name', 'LIKE', "%".request()->get('search')."%")
             // ->whereIn('modul_id', $moduls)
             ->where('name','LIKE', "%".request()->get('search')."%")
             ->get();
+            dd($artikels_modul);
 
-            $merge = $artikels_modul->merge($artikels);
             
-        //    dd($merge);
 
         }
-
-        $artikels_res = $merge;
+        $data = $artikels_modul->merge($artikels);
+        // dd($data);
+        $artikels_res = $data->all();
+        dd($artikels_res);
         $id = 1;
         return view('search', compact('artikels_res','id'));
     }
