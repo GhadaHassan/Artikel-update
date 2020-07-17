@@ -53,8 +53,8 @@
         @php $input = 'old_password'; @endphp
         <div class="col-md-6">
             <div class="form-group bmd-form-group">
-            <label class="bmd-label-floating">olt Kennwort </label>
-            <input type="text" class="form-control{{ $errors->has($input) ? ' is-invalid' : '' }}" value="{{ isset($row) ? $row->{$input} : '' }}" name="{{$input}}" required autofocus>
+            <label class="bmd-label-floating">altes password</label>
+            <input type="text" class="form-control{{ $errors->has($input) ? ' is-invalid' : '' }}" value="{{ isset($row) ? $row->{$input} : '' }}" name="{{$input}}">
             @if ($errors->has($input))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first($input) }}</strong>

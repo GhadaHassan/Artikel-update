@@ -57,6 +57,24 @@ class ArtikelsController extends BackEndController
         return redirect('dashboard/artikels');
     }
 
+    public function edit($id){
+        $row =  $this->model->findOrFail($id);
+
+        $rows_modul = $row->modul;
+    
+        $pageTitle = 'EDITE '.strtoupper($this->plureModelName());   
+        $pageDes = "Here you can edit ".$this->plureModelName(); 
+        $routename = $this->plureModelName();
+        $append = $this->append();
+
+        return view('dashboard.'.$routename.'.edit', compact(
+            'row',
+            'rows_modul',
+            'pageTitle',
+            'pageDes',
+            'routename'))->with($append);
+    }
+        
     public function update($id, Store $request){
 
         $row = $this->model->findOrFail($id);

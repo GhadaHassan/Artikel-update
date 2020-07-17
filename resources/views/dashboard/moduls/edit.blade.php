@@ -1,7 +1,7 @@
 @extends('dashboard.layout.app')
 
 @section('title')
-  {{$pageTitle}}
+  {{$pageTitle = 'MODUL BEARBEITEN'}}
 @endsection
 @section('content')
 
@@ -23,9 +23,7 @@
             <div class="clearfix"></div>
           </form>
 
-          <div class="row">
-            <h1>asd</h1>
-          </div>
+          
         </div>
           
       @endslot

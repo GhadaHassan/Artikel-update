@@ -56,7 +56,9 @@
                         <tbody>
                           @foreach ($artikels as $artikel)
                           <tr>
-                              <td>{{$artikel->modul->name}}</td>
+                           @foreach ($artikel->modul as $item)
+                              <td>{{$item->name}}</td>
+                           @endforeach
                               <td>{{$artikel->name}}</td>
                               <td>{{$artikel->username}}</td>
                               <td>{{$artikel->password}}</td>

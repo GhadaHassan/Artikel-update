@@ -12,6 +12,20 @@ class ModulsController extends BackEndController
     public function __construct(Modul $model){
         parent::__construct($model);
     }
+
+    public function edit($id){
+        $row =  $this->model->findOrFail($id);
+        $pageTitle = 'EDITE '.strtoupper($this->plureModelName());   
+        $pageDes = "Here you can edit ".$this->plureModelName(); 
+        $routename = $this->plureModelName();
+        $append = $this->append();
+
+        return view('dashboard.'.$routename.'.edit', compact(
+            'row',
+            'pageTitle',
+            'pageDes',
+            'routename'))->with($append);
+    }
         
     protected function filter($rows){
         if(request()->has('name') && request()->get('name') != ''){

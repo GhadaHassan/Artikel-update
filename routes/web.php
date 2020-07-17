@@ -17,7 +17,7 @@ Route::get('/search','WelcomeController@search');
 
 // ------------------------- this route for dashboard -------------------------
 // Route::get('dashboard','Backend\HomeController@index');
-Route::namespace('Backend')->prefix('dashboard')->middleware('admin')->group(function(){
+Route::namespace('Backend')->prefix('dashboard')->middleware(['auth' ,'admin'])->group(function(){
 
     Route::get('home','HomeController@index');
 

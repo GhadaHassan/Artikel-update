@@ -76,20 +76,31 @@ class BackEndController extends Controller{
             'routename'))->with($append);
     }
 
-    public function edit($id){
-        $row =  $this->model->findOrFail($id);
+    // public function edit($id){
+    //     $row =  $this->model->findOrFail($id);
+    //     // dd($row->modul);
+    //     $rows = $row->modul;
+    //     $with = $this->with();
+    //     if(!empty($with)){
+    //         $rows = $rows->with($with);
+    //     }
+    //     // $rows = $rows->orderBy('id','desc')->paginate(5);
 
-        $pageTitle = 'EDITE '.strtoupper($this->plureModelName());   
-        $pageDes = "Here you can edit ".$this->plureModelName(); 
-        $routename = $this->plureModelName();
-        $append = $this->append();
+    //     // dd($rows);
 
-        return view('dashboard.'.$routename.'.edit', compact(
-            'row',
-            'pageTitle',
-            'pageDes',
-            'routename'))->with($append);
-    }
+
+    //     $pageTitle = 'EDITE '.strtoupper($this->plureModelName());   
+    //     $pageDes = "Here you can edit ".$this->plureModelName(); 
+    //     $routename = $this->plureModelName();
+    //     $append = $this->append();
+
+    //     return view('dashboard.'.$routename.'.edit', compact(
+    //         'row',
+    //         'rows',
+    //         'pageTitle',
+    //         'pageDes',
+    //         'routename'))->with($append);
+    // }
 
     public function delete($id){
         $row = $this->model->findOrFail($id)->delete();
